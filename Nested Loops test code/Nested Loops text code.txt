@@ -1,0 +1,103 @@
+function main(floors, aptNums) {
+    for (let i = floors; i >= 1; i--) {
+        var output = '';
+        for (let j = 0; j < aptNums; j++) {
+            if (i == floors) {
+                output += ` L${i}${j}`;
+            } else if (i % 2 == 0) {
+                output += ` O${i}${j}`;
+            } else {
+                output += ` A${i}${j}`;
+            }
+        }
+        console.log(output);
+    }
+}
+
+
+
+function main(n) {
+    var output = '';
+    for (let i = 2; i <= n; i += 2) {
+        for (let j = 1; j <= n; j += 2) {
+            output += '' + i + j + (i * j) + ' ';
+        }
+    }
+    console.log(output);
+}
+
+
+
+function main(number) {
+    num1 = 0;
+    num2 = 0;
+    num3 = 0;
+    for (num1 = 1; num1 <= number; num1++) {
+        for (num2 = 1; num2 <= number; num2++) {
+            for (num3 = 1; num3 <= number; num3++) {
+                if (num1 * num2 * num3 == number) {
+                    let output = `${num1}${num2}${num3}`;
+                    console.log(output);
+                }
+            }
+        }
+    }
+}
+
+
+//Prime numbers 
+function main(startNum, endNum) {
+    for (let i = startNum; i <= endNum; i++) {
+        let isPrime = true;
+        for (let j = 2; j < i; j++) {
+            if (i % j == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime == true) {
+            console.log(i);
+        }
+    }
+}
+
+
+//Letter combo's
+function main(start, end, ex) {
+    let counter = 0;
+    let startASCII = start.charCodeAt(0);
+    let endASCII = end.charCodeAt(0);
+    for (let char1 = startASCII; char1 <= endASCII; char1++) {
+        for (let char2 = startASCII; char2 <= endASCII; char2++) {
+            for (let char3 = startASCII; char3 <= endASCII; char3++) {
+                let c1 = String.fromCharCode(char1);
+                let c2 = String.fromCharCode(char2);
+                let c3 = String.fromCharCode(char3);
+                if (c1 != ex && c2 != ex && c3 != ex) {
+                    console.log(c1 + c2 + c3);
+                    counter++;
+                }
+            }
+        }
+    }
+    console.log(counter);
+}
+
+
+
+function main(n) {
+    let output = "";
+    for (d1 = 1; d1 <= n; d1++) {
+        for (d2 = 0; d2 <= n; d2++) {
+            for (d3 = 0; d3 <= n; d3++) {
+                for (d4 = 0; d4 <= n; d4++) {
+                    if ((d1 + d2) == n && (d3 + d4) == n) {
+                        output += `${d1}${d2}${d3}${d4} `;
+                    }
+                }
+            }
+        }
+    }
+    console.log(output);
+}
+

@@ -1,0 +1,38 @@
+function main(numComputers, numComputerArray) {
+    var possibleSales = 0;
+    var numArray = 0;
+    var i = 0;
+    var rating = 0;
+    var ratingAvg = 0;
+    var counter = 0;
+    var sales = 0;
+    var totalSales = 0;
+    while (numComputerArray[i] != undefined) {
+        if (numComputerArray[i] == undefined) {
+            break;
+        }
+        numArray = numComputerArray[i] % 10;
+        ratingAvg += numArray; //holds the rating value extracted off the array and sums it.
+        possibleSales = Math.floor(numComputerArray[i] / 10);
+        if (numArray == 2) {
+            sales = 0;
+        } else if (numArray == 3) {
+            sales = possibleSales * 0.50; // computerArray / 2 * sales = 15
+            totalSales += sales;
+        } else if (numArray == 4) {
+            sales = possibleSales * 0.70;
+            totalSales += sales;
+        } else if (numArray == 5) {
+            sales = possibleSales * 0.85;
+            totalSales += sales;
+        } else if (numArray == 6) {
+            sales = possibleSales * 1;
+            totalSales += sales;
+        }
+        i++;
+    }
+    // var sales = possibleSales * numArray;
+    ratingAvg = ratingAvg / numComputers; //takes the rating sum / input
+    console.log(totalSales.toFixed(2));
+    console.log(ratingAvg.toFixed(2));
+}
